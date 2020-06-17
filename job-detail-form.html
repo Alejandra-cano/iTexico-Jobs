@@ -63,7 +63,7 @@
 
                         Fruitcake tiramisu pastry. Gingerbread soufflé toffee lollipop cookie. Cake sesame snaps cake marshmallow jujubes topping pudding sweet roll. Caramels cupcake brownie sweet roll marzipan bear claw.</p>
                 </div>
-                <div style="grid-column: 1/13;">
+                <div style="grid-column: 1/9;">
                     <div class="title">
                         <p>You will</p>
                     </div>
@@ -75,7 +75,7 @@
                         <li class="body2">Proin fringilla dui eget massa hendrerit lobortis.</li>
                     </ul>
                 </div>
-                <div style="grid-column: 1/13;">
+                <div style="grid-column: 1/9;">
                     <div class="title">
                         <p>Experience</p>
                     </div>
@@ -88,15 +88,54 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex">
-                <button>apply for this Job</button>
-            </div>
+                    <form class="job-form">
+                            <div class="input">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="input">
+                                <label for="email">e-mail</label>
+                                <input type="text" id="email" name="email">
+                            </div>
+                            <div class="input">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="input">
+                                <label for="position">I´m applying for...</label>
+                                <select name="position" id="position">
+                                    <option value="none">-Please Select-</option>
+                                    <option value="design">Design</option>
+                                    <option value="java">Java</option>
+                                    <option value="javascript">Java Script</option>
+                                    <option value="net">.NET</option>
+                                    <option value="devops">Devops</option>
+                                     <option value="ai">AI</option>
+                                    </select>
+                            </div>
+                            <div class="input">
+                                <label for="office">Wich office would you prefer?</label>
+                                <input type="text" id="office" name="office">
+                            </div>
+                            <div class="input">
+                                <p>Summit Resume</p>
+                                <input type="file" name="resume" id="resume" class="inputfile" />
+                                <label for="file">Choose a file</label>
+                            </div>
+                            <div class="input">
+                                <label for="message">Message</label>
+                                <input type="text" id="message" name="message">
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Apply for this job" class="button">
+                            </div>
+                    </form>
         </section>
 
         <!--How we hier-->
         <section class="hier2">
             <div class="flex">
-                <h4>How we hire</h4>
+                <h4>How we hire Disigners</h4>
                 <img src="SVG/chevron-right.svg" alt="">
             </div>
         </section>

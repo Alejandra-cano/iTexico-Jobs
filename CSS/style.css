@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #F1F1F1;
+  background-color: #fff;
 }
 
 nav {
@@ -76,6 +76,25 @@ header .main-header p {
   color: #fff;
   max-width: 670px;
 }
+header .main-header button {
+  margin-bottom: 0;
+}
+
+footer {
+  height: 80px;
+  background-color: #1b75bc;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  color: #fff;
+}
 
 .data-container {
   display: flex !important;
@@ -113,6 +132,14 @@ header .main-header p {
   margin-left: 10px;
 }
 
+.positions {
+  background-color: #F1F1F1;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .positions .grid .card {
   display: flex !important;
   flex-direction: row;
@@ -148,11 +175,6 @@ header .main-header p {
   align-items: center;
   margin-left: 0;
 }
-.positions .flex {
-  width: 100%;
-  text-align: center;
-  padding: 30px 0 30px 0;
-}
 
 .info {
   background-color: #ffffff;
@@ -183,20 +205,20 @@ header .main-header p {
   align-items: center;
   width: 70vw;
 }
-
-.hier {
-  background-color: #d52789;
-  width: 100%;
-  height: 130px;
-  display: flex !important;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.info .locations {
+  padding-bottom: 60px;
 }
 
 .form-container {
   background-color: #373736;
   height: 334px;
+}
+.form-container .social {
+  max-width: 200px;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .form-container form .form {
   display: flex !important;
@@ -208,6 +230,7 @@ header .main-header p {
 }
 .form-container form .form .input {
   margin-top: 24px;
+  min-width: 150px;
   display: flex !important;
   flex-direction: column;
   justify-content: flex-start;
@@ -216,10 +239,12 @@ header .main-header p {
 .form-container form .form .input input {
   margin-top: 5px;
   margin-right: 15px;
-  width: 300px;
+  width: 16vw;
+  min-width: 150px;
   height: 40px;
   border-radius: 5px;
   border-style: none;
+  padding: 0px 1.4em 0px 0.8em;
 }
 .form-container form .form .input p {
   margin-top: 0;
@@ -247,21 +272,216 @@ header .main-header p {
   border-radius: 20px;
   cursor: pointer;
 }
+.form-container form .form .input #message {
+  height: 130px;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+}
+.form-container form .form .input #position {
+  margin-top: 5px;
+  margin-right: 15px;
+  width: 18vw;
+  min-width: 185px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  color: #616061;
+  padding: 0 0 0 0.8em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
 
-footer {
-  height: 80px;
+.loc-w {
+  max-width: 214px;
+}
+
+.job-position {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.job-position .posit-desc {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 25px;
+}
+.job-position .posit-desc h4 {
+  margin: 0;
+}
+.job-position .posit-desc .flex {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+.job-position .posit-desc .flex img {
+  margin-left: 32px;
+  margin-right: 8px;
+}
+.job-position .posit-desc .flex p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.description {
+  background-color: #fff;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.description .grid div .title {
+  text-align: initial;
+}
+
+.life-style {
+  background-color: #fff;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.life-style .title {
+  width: 80vw;
+  text-align: initial;
+  margin: 60px 0 60px 0;
+}
+.life-style .title p {
+  margin: 0;
+}
+.life-style .pictures {
+  width: 80vw;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.job-form {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+.job-form .submit {
+  text-align: center;
+  width: 32vw;
+  min-width: 150px;
+}
+.job-form .input {
+  margin-top: 24px;
+  min-width: 150px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.job-form .input label {
+  font-size: 16px;
+  font-weight: 100;
+  color: #373736;
+}
+.job-form .input input {
+  margin-top: 5px;
+  margin-right: 15px;
+  width: 30vw;
+  min-width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: thin;
+  padding: 0px 1.4em 0px 0.8em;
+}
+.job-form .input p {
+  margin-top: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 100;
+  color: #373736;
+}
+.job-form .input .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.job-form .input .inputfile + label {
+  margin-top: 10px;
+  font-family: Work Sans;
+  font-size: 14px;
+  color: white;
   background-color: #1b75bc;
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.job-form .input #message {
+  height: 130px;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+}
+.job-form .input #position {
+  margin-top: 5px;
+  margin-right: 15px;
+  width: 32.5vw;
+  min-width: 185px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  color: #616061;
+  padding: 0 0 0 0.8em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.hier {
+  background-color: #d52789;
+  width: 100%;
+  height: 130px;
   display: flex !important;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-footer p {
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  color: #fff;
+
+.hier2 {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hier2 .flex {
+  background-color: #373736;
+  width: 80vW;
+  height: 94px;
+  padding: 0 0 0 0;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hier2 .flex h4 {
+  margin: 0px;
 }
 
 .title {
@@ -333,19 +553,45 @@ label {
   color: #616061;
 }
 
-button {
+.form-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  color: #fff;
+}
+
+.flex {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 30px 0;
+}
+.flex button {
   margin-top: 24px;
   margin-bottom: 33px;
   font-family: Work Sans;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: 100;
   color: #fff;
   padding: 12px 24px 12px 24px;
   background-color: #d52789;
   border-radius: 26px;
   border-style: none !important;
-  line-height: 1.71;
+  letter-spacing: 1.4px;
+  grid-column: 1/2;
+}
+
+button {
+  margin-top: 24px;
+  margin-bottom: 33px;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-weight: 100;
+  color: #fff;
+  padding: 12px 24px 12px 24px;
+  background-color: #d52789;
+  border-radius: 26px;
+  border-style: none !important;
   letter-spacing: 1.4px;
   grid-column: 1/2;
 }
@@ -355,21 +601,26 @@ button {
   margin-bottom: 33px;
   font-family: Work Sans;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: 100;
   color: #fff;
   padding: 12px 24px 12px 24px;
   background-color: #d52789;
   border-radius: 26px;
   border-style: none !important;
-  line-height: 1.71;
   letter-spacing: 1.4px;
   grid-column: 1/2;
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 14px;
-  color: #fff;
+}
+
+.pic1 {
+  width: 20%;
+  height: 232px;
+  background-color: #1b75bc;
+}
+
+.pic2 {
+  width: 40%;
+  height: 232px;
+  background-color: #d52789;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,16 +3,14 @@ $blue-color: #1b75bc;
 $dark-blue-color:#1B75BC;
 
 @mixin button ( $font-size, $color ) {
-    font-family: Work Sans;
-    font-size: $font-size;
-    font-style: normal;
-    font-weight: 500;
+    font-family: Work Sans ;
+    font-size: $font-size ;
+    font-weight: 100 ;
     color: #fff;
     padding: 12px 24px 12px 24px;
     background-color: $color;
     border-radius: 26px;
     border-style: none !important;
-    line-height: 1.71;
     letter-spacing: 1.4px;
     grid-column: 1/2;
 }
@@ -30,8 +28,8 @@ $dark-blue-color:#1B75BC;
     line-height: 40px;
     color:$color;
 }
-@mixin text ($weight,$size, $color) {
-    font-family: Work Sans;
+@mixin text ($family,$weight,$size, $color) {
+    font-family: $family;
     font-style: normal;
     font-weight: $weight;
     font-size: $size;
@@ -45,9 +43,9 @@ $dark-blue-color:#1B75BC;
     margin: 0 auto;
 }
 
-
+//General styles//
 body{
-    background-color: #F1F1F1;
+    background-color: #fff;
 }
 nav{
     position: fixed;
@@ -95,12 +93,23 @@ header{
             width: 80vw;
             margin-bottom:40px;
             p{
-                @include text(500, 16px,#fff);
+                @include text(Work Sans,500, 16px,#fff);
                 max-width:670px;
             }
-
+            button{
+                margin-bottom: 0;
+            }
         }
 }
+footer{
+    height: 80px ;
+    background-color: $blue-color ;
+    @include flex( row, center, center);
+    p{
+        @include text (Work Sans, 100,16px, #fff);
+    }
+}
+//home//
 .data-container{
     @include flex(row, center, center);
     background-color: #fff;
@@ -128,6 +137,9 @@ header{
     }
 }
 .positions{
+    background-color: #F1F1F1;
+    @include flex(column, center, center);
+    flex-wrap:wrap;
     .grid{
         .card{
             @include flex(row, flex-start, center); 
@@ -156,11 +168,6 @@ header{
             }
         }
     }
-    .flex{
-        width: 100%;
-        text-align: center;
-        padding:  30px 0 30px 0 
-    }
 }
 .info{
     background-color:#ffffff;
@@ -183,16 +190,17 @@ header{
             width:70vw;
         }
     }
-}
-.hier{
-    background-color: $magenta-color;
-    width: 100%;
-    height: 130px;
-    @include flex(row, center, center)
+    .locations{
+        padding-bottom: 60px;
+    }
 }
 .form-container{
     background-color: #373736 ;
     height: 334px;
+    .social{
+        max-width: 200px ;
+        @include flex(row, space-between, center)
+    }
     form{
         .form{
             @include flex(column, flex-start, flex-start);
@@ -200,14 +208,17 @@ header{
             height: 300px;
             .input {
                 margin-top:24px;
+                min-width:150px;
                 @include flex(column, flex-start, flex-start);
                 input{
                     margin-top:5px;
                     margin-right:15px;
-                    width: 300px;
+                    width:16vw;
+                    min-width:150px;
                     height: 40px;
                     border-radius: 5px ;
                     border-style: none;
+                    padding: 0px 1.4em 0px .8em;
                 }
                 p{
                     margin-top:0;
@@ -236,19 +247,182 @@ header{
                     border-radius: 20px;
                     cursor: pointer;
                 }
+                #message{
+                    height:130px;
+                    padding: .6em 1.4em .5em .8em;
+                }
+                #position{
+                    margin-top:5px;
+                    margin-right:15px;
+                    width:18vw;
+                    min-width:185px;
+                    height: 40px;
+                    border-radius: 5px ;
+                    border-style: none;
+                    @include text(Montserrat ,100, 16px , #616061 );
+                    padding: 0 0 0 .8em;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    cursor: pointer;
+                }
             }
         }
     }
 }
-footer{
-    height: 80px ;
-    background-color: $blue-color ;
-    @include flex( row, center, center);
-    p{
-        @include text (100,16px, #fff);
-    }
+.loc-w{
+    max-width:214px;
 }
 
+//Job details//
+.job-position{
+    @include flex(row, flex-start, center);
+    .posit-desc{
+        @include flex(column, flex-start, center);
+        margin-left:25px;
+        h4{
+            margin: 0;
+        }
+        .flex{
+            @include flex(row, flex-start, center);
+            padding:0;
+            img{
+                margin-left:32px;
+                margin-right:8px;
+            }
+            p{
+                margin-top:5px;
+                margin-bottom:5px;
+            }
+        }
+    }
+}
+.description{
+    background-color: #fff;
+    @include flex(column, flex-start, center);
+    .grid{
+        div{
+            .title{
+                text-align: initial;
+            }
+        }
+    }
+}
+.life-style{
+    background-color: #fff;
+    @include flex(column, center, center);
+    .title{
+        width: 80vw;
+        text-align: initial;
+        margin: 60px 0 60px 0;
+        p{
+            margin:0;
+        }
+    }
+    .pictures{
+        width: 80vw;
+        @include flex(row, flex-start, flex-start);
+        flex-wrap: wrap;
+        margin-bottom:60px;
+    }
+}
+//Job form//
+.job-form{
+    @include flex(column, flex-start, flex-start);
+    margin-bottom:60px;
+    margin-top: 60px;
+    .submit{
+        text-align: center;
+        width:32vw;
+        min-width:150px;
+    }
+    .input {
+        margin-top:24px;
+        min-width:150px;
+        @include flex(column, flex-start, flex-start);
+        label{
+            font-size: 16px;
+            font-weight: 100;
+            color: #373736;
+        }
+        input{
+            margin-top:5px;
+            margin-right:15px;
+            width:30vw;
+            min-width:150px;
+            height: 40px;
+            border-radius: 5px ;
+            border-width: thin;
+            padding: 0px 1.4em 0px .8em;
+        }
+        p{
+            margin-top:0;
+            margin:0;
+            font-size: 16px;
+            font-weight: 100;
+            color: #373736;
+            
+        }
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        .inputfile + label {
+            margin-top: 10px;
+            font-family: Work Sans;
+            font-size: 14px;
+            color: white;
+            background-color: $blue-color;
+            display: inline-block;
+            padding: 10px 20px 10px 20px ;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #message{
+            height:130px;
+            padding: .6em 1.4em .5em .8em;
+        }
+        #position{
+            margin-top:5px;
+            margin-right:15px;
+            width:32.5vw;
+            min-width:185px;
+            height: 40px;
+            border-radius: 5px ;
+            @include text(Montserrat ,100, 16px , #616061 );
+            padding: 0 0 0 .8em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+    }
+}
+//Hier banners//
+.hier{
+    background-color: $magenta-color;
+    width: 100%;
+    height: 130px;
+    @include flex(row, center, center)
+}
+.hier2{
+    width: 100%;
+    @include flex(row, center, center);
+    .flex{
+        background-color: #373736;
+        width: 80vW;
+        height: 94px;
+        padding: 0 0 0 0;
+        @include flex(row, center, center);
+        h4{
+            margin:0px;
+        }
+    }
+}
 //Text styles//
 .title{
     @include title(#373736);
@@ -256,19 +430,19 @@ footer{
     text-align: center;
 }
 h3{
-    @include text (600,24px,$dark-blue-color);
+    @include text (Work Sans,600,24px,$dark-blue-color);
 }
 h4{
     @include title(#fff);
     max-width:670px;
 }
 h5{
-    @include text (600,20px, #1B75BC);
+    @include text ( Work Sans,600,20px, #1B75BC);
     margin-top:10px;
     margin-bottom: 0;
 }
 h6{
-    @include text(bold, 20px , #000 );
+    @include text(Work Sans,bold, 20px , #000 );
 }
 label{
     font-size: 16px;
@@ -276,25 +450,48 @@ label{
     color: #fff;
 }
 .body2{
-        @include text(200, 16px , #616061 );
+        @include text(Work Sans,200, 16px , #616061 );
 }
 .body1{
-    @include text(100, 14px , #616061 );
+    @include text(Work Sans,100, 14px , #616061 );
+}
+.form-title{
+    @include text(Montserrat, 600, 48px , #fff );
 }
 
-//grids//
+//grid//
 .grid{
     @extend %grid;
 }
 //Buttons//
+.flex{
+    width: 100%;
+    text-align: center;
+    padding:  30px 0 30px 0 ;
+    button{
+        margin-top:24px;
+        margin-bottom: 33px ;
+        @include button (14px, $magenta-color);
+    }
+}
 button{
     margin-top:24px;
     margin-bottom: 33px ;
     @include button (14px, $magenta-color);
 }
 .button{
-    margin-top:24px;
+    margin-top:24px ;
     margin-bottom: 33px ;
     @include button (14px, $magenta-color);
-    @include text (100,14px,#fff);
+}
+//Pictures//
+.pic1{
+    width:20%;
+    height:232px;
+    background-color: $blue-color;
+}
+.pic2{
+    width:40%;
+    height:232px;
+    background-color: $magenta-color;
 }
