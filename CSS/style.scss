@@ -402,6 +402,96 @@ footer{
         }
     }
 }
+//Hiering Process//
+.acordion{
+    @include flex(column, center, center);
+    margin-bottom:60px;
+    .flex{
+        @include flex(column, flex-start, flex-start);
+        width:80vw;
+        .title{
+            text-align: initial;
+            p{
+                margin:0;
+            }
+        }
+        .body2{
+            text-align: initial;
+            color: #000;
+        }
+    }
+    .acordion-body{
+        width: 60vw;
+        .acordion-pt{
+            .line{
+                width:100%;
+                height:1px;
+                background-color: #4BACE1;
+            }
+            .active, .accordion-btn:hover {
+                background-color: #ccc; 
+              }
+            .acordion-btn{
+                @include flex(row, space-between, center);
+                background-color: #fff;
+                cursor: pointer;
+                width: 60vw;
+                @include text (Work Sans,600,24px,#373736);
+                padding: 0;
+                border-radius: 0px;
+                border-style: none !important;
+                letter-spacing: 1.4px;
+                margin-bottom: 0px;
+                .flex{
+                    @include flex(row, flex-start, center);
+                    padding: 0;
+                    .step{
+                        @include text (Work Sans,600,48px,$magenta-color);
+                        margin-right: 20px;
+                        margin-top:5px;
+                        margin-bottom:5px;
+                    }
+                    .txt{
+                        margin-top:5px;
+                        margin-bottom:5px;
+                    }
+                }
+                .chevron{
+                    background-image: url("../SVG/chevron-down.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 25px;
+                    height:20px;
+                    margin-right:15px;
+                }
+            }
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+              }
+        }
+    }
+}
+.help{
+    @include flex(column, flex-start, center);
+    background-color: #F1F1F1;
+    margin-top: 60px;
+    div{
+        width:80vw;
+        h3{
+            color: #000;
+        }
+        ul{
+            padding-left:15px;
+            padding-bottom:20px;
+            .body2{
+                color:#000;
+            }
+        }
+    }
+}
 //Hier banners//
 .hier{
     background-color: $magenta-color;
@@ -429,6 +519,10 @@ footer{
     width:100%;
     text-align: center;
 }
+.title-acord{
+    @include text (Work Sans,100,34px,#000);
+    margin-top: 25px;
+}
 h3{
     @include text (Work Sans,600,24px,$dark-blue-color);
 }
@@ -450,7 +544,7 @@ label{
     color: #fff;
 }
 .body2{
-        @include text(Work Sans,200, 16px , #616061 );
+    @include text(Work Sans,200, 16px , #616061 );
 }
 .body1{
     @include text(Work Sans,100, 14px , #616061 );

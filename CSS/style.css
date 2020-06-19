@@ -453,6 +453,118 @@ footer p {
   cursor: pointer;
 }
 
+.acordion {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.acordion .flex {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80vw;
+}
+.acordion .flex .title {
+  text-align: initial;
+}
+.acordion .flex .title p {
+  margin: 0;
+}
+.acordion .flex .body2 {
+  text-align: initial;
+  color: #000;
+}
+.acordion .acordion-body {
+  width: 60vw;
+}
+.acordion .acordion-body .acordion-pt .line {
+  width: 100%;
+  height: 1px;
+  background-color: #4BACE1;
+}
+.acordion .acordion-body .acordion-pt .active, .acordion .acordion-body .acordion-pt .accordion-btn:hover {
+  background-color: #ccc;
+}
+.acordion .acordion-body .acordion-pt .acordion-btn {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  width: 60vw;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #373736;
+  padding: 0;
+  border-radius: 0px;
+  border-style: none !important;
+  letter-spacing: 1.4px;
+  margin-bottom: 0px;
+}
+.acordion .acordion-body .acordion-pt .acordion-btn .flex {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+.acordion .acordion-body .acordion-pt .acordion-btn .flex .step {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  color: #d52789;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.acordion .acordion-body .acordion-pt .acordion-btn .flex .txt {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.acordion .acordion-body .acordion-pt .acordion-btn .chevron {
+  background-image: url("../SVG/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 20px;
+  margin-right: 15px;
+}
+.acordion .acordion-body .acordion-pt .panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.help {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #F1F1F1;
+  margin-top: 60px;
+}
+.help div {
+  width: 80vw;
+}
+.help div h3 {
+  color: #000;
+}
+.help div ul {
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+.help div ul .body2 {
+  color: #000;
+}
+
 .hier {
   background-color: #d52789;
   width: 100%;
@@ -493,6 +605,15 @@ footer p {
   color: #373736;
   width: 100%;
   text-align: center;
+}
+
+.title-acord {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 34px;
+  color: #000;
+  margin-top: 25px;
 }
 
 h3 {
