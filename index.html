@@ -13,8 +13,10 @@
     <body>
         
         <!-- Navigation -->
-        <nav>
+        <div class="mov-menu" onclick="displayMenu()"><img src="svg/menu.svg" alt=""></div>
+        <nav id="nav">
             <div class="navigation">
+                <div class="close" onclick="displayMenu()"><img src="/SVG/close.svg" alt=""></div>
                 <div>
                     <img src="svg/logo-i-texico.svg" alt="iTexico logo">
                 </div>
@@ -70,7 +72,7 @@
             <p>We are looking for:</p>
         </div>
         <div class="grid">
-                <div class="card" style="grid-column: 1/5;">
+                <div class="card grid15">
                     <img class="position-icon" src="SVG/position-icons/design.svg" alt="">
                     <div>
                         <h6>UX/UI designer</h6>
@@ -81,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="grid-column: 5/9;">
+                <div class="card grid59">
                     <img class="position-icon" src="SVG/position-icons/ai.svg" alt="">
                     <div>
                         <h6>Machine learning specialist</h6>
@@ -92,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="grid-column: 9/13;">
+                <div class="card grid913">
                     <img class="position-icon" src="SVG/position-icons/java.svg" alt="">
                     <div>
                         <h6>Java developer</h6>
@@ -103,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="grid-column: 1/5;">
+                <div class="card grid15">
                     <img class="position-icon" src="SVG/position-icons/devops.svg" alt="">
                     <div >
                         <h6>Devops Senior</h6>
@@ -114,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="grid-column: 5/9;">
+                <div class="card grid59">
                     <img class="position-icon" src="SVG/position-icons/design.svg" alt="">
                     <div >
                         <h6>UX/UI designer</h6>
@@ -125,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="grid-column: 9/13;">
+                <div class="card grid913">
                     <img class="position-icon" src="SVG/position-icons/net.svg" alt="">
                     <div>
                         <h6>Developer .NET Junior</h6>
@@ -148,42 +150,42 @@
                 <p>Awesome Perks</p>
             </div>
             <div class="grid">
-                    <div class="card-2" style="grid-column: 1/4;">
+                    <div class="card-2 grid14">
                         <img src="SVG/Perks/img-salary.svg" alt="">
                         <h5>Competitive salary</h5>
                         <p class="body1">You will get a very competitive salary that will match with your skill and experience.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 4/7;">
+                    <div class="card-2 grid47">
                         <img src="SVG/Perks/img-training.svg" alt="">
                         <h5>Continuos training</h5>
                         <p class="body1">Keep up with the trends and develop your skills to a full potential with platforms and resources at your disposal.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 7/10;">
+                    <div class="card-2 grid710">
                         <img src="SVG/Perks/img-beverages.svg" alt="">
                         <h5>Beverages</h5>
                         <p class="body1">Need an extra morning boost? We have unlimited coffee that will keep you energized. Plus, you will enjoy our thirsty Thursday tradition.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 10/13;">
+                    <div class="card-2 grid1013">
                         <img src="SVG/Perks/img-meet.svg" alt="">
                         <h5>Meet your clients</h5>
                         <p class="body1">Be part of innovative International projects where you'll have the chance to work and participate with your clients on-site.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 1/4;">
+                    <div class="card-2 grid14">
                         <img src="SVG/Perks/img-balance.svg" alt="">
                         <h5>Work - Life Balance</h5>
                         <p class="body1">Our working hours will always pursue a balance between work and your personal life.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 4/7;">
+                    <div class="card-2 grid47">
                         <img src="SVG/Perks/img-healt.svg" alt="">
                         <h5>Medical benefits</h5>
                         <p class="body1">Because we care for the well-being of you and your family you are protected with minor and major medical insurance.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 7/10;">
+                    <div class="card-2 grid710">
                         <img src="SVG/Perks/img-kids.svg" alt="">
                         <h5>Kid-friendly workspace</h5>
                         <p class="body1">We know about being a parent, that is why you are welcome to bring your kids to the office whenever is needed.</p>
                     </div>
-                    <div class="card-2" style="grid-column: 10/13;">
+                    <div class="card-2 grid1013">
                         <img src="SVG/Perks/img-map.svg" alt="">
                         <h5>Great location</h5>
                         <p class="body1">Time is gold, and we are sure your everyday trip to work will be faster as we are located in one of the best areas in the cities of Guadalajara and Aguascalientes.</p>
@@ -207,10 +209,10 @@
                     <p>Our locations</p>
                 </div>
                 <div class="grid">
-                    <div style="grid-column: 1/8;">
+                    <div class="grid18">
                         <img src="JPG/mapa.png" alt="">
                     </div>
-                    <div style="grid-column: 8/13;">
+                    <div class="grid813">
                         <div>
                             <h3>Gadalajara</h3>
                             <p class="body2 loc-w">Av. Ciencia y Tecnología Pocitos, Aguascalientes, Aguascalientes</p>
@@ -231,7 +233,7 @@
         <!--Form-->
         <section class="form-container">
             <div class="grid">
-                <div style="grid-column: 1/4;">
+                <div class="grid14">
                     <p class="form-title">Join Our Team</p>
                     <div class="social">
                         <img src="SVG/Social-media/Face.svg" alt="Facebook logo">
@@ -239,7 +241,7 @@
                         <img src="SVG/Social-media/linkedin.svg" alt="Linkedin logo">
                     </div>
                 </div>
-                <form style="grid-column: 4/13;">
+                <form class="grid413">
                     <div class="form">
                         <div class="input">
                             <label for="name">Name</label>
@@ -286,5 +288,6 @@
         <footer>
             <p>© 2020 iTexico LLC. All Rights Reserved. Privacy and Legal</p>
         </footer>
+        <script src="javascript.js" ></script>
     </body>
 </html>

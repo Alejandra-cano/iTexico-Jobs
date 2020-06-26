@@ -15,7 +15,7 @@ $dark-blue-color:#1B75BC;
     grid-column: 1/2;
 }
 @mixin flex ( $flex-direction, $flex-justify, $flex-align) {
-	display: flex !important;
+	display: flex ;
 	flex-direction: $flex-direction;
 	justify-content: $flex-justify;
     align-items: $flex-align;
@@ -42,11 +42,49 @@ $dark-blue-color:#1B75BC;
     max-width:80vw;
     margin: 0 auto;
 }
+@mixin for-size($size) {
+	@if $size == phone {
+	  @media (max-width: 599px) { @content; }
+	} 
+	@else if $size == tablet-portrait {
+	  @media (min-width: 600px) and (max-width:899px){ @content; }
+	} 
+	@else if $size == tablet-landscape {
+	  @media (min-width: 900px) and (max-width:1199px){ @content; }
+    } 
+    @else if $size == mobile {
+        @media screen and (max-width:1199px){ @content; }
+      } 
+  }
 
 //General styles//
 body{
     background-color: #fff;
 }
+//Mobile menu//
+.mov-menu{
+    display:none;
+    @include for-size(mobile){
+        display: initial;
+        position: fixed;
+        width: 56px;
+        height:56px;
+        top: 0;
+        right:0;
+        margin-right: 2%;
+        margin-top:2%;
+        @include flex(row, center, center);
+        background-color:rgba(0,0,0,.5) ;
+        z-index:1;
+}
+    img{
+        @include for-size(mobile){
+            width: 30px;
+            height:30px;
+        }
+    }
+}
+//Menu//
 nav{
     position: fixed;
     top: 0;
@@ -55,17 +93,56 @@ nav{
     background-color:rgba(0,0,0,.2) ;
     height: 80px;
     z-index:1;
+    @include for-size(mobile){
+        display:none;
+        position: fixed;
+        top: 0;
+        width:100vw;
+        max-width:100%;
+        height: 100vh;
+        background-color:rgba(0,0,0,.9) ;
+        z-index:1;
+    }
     .navigation{
         @include flex(row, space-between, center);
         width: 80vw;
+        @include for-size(mobile){
+            @include flex(column, center, center);
+            width: 100%;
+            height:70vh;
+            margin-top: 20%;
+        }
+
+        .close{
+            display:none;
+            @include for-size(mobile){
+                display:initial;
+                position:absolute;
+                margin-right: 5%;
+                margin-top:5%;
+                right:0;
+                top:0;
+
+            }
+            img{
+                width: 25px;
+                height:25px;
+            }
+        }
         div{
             @include flex(row, end, center);
+            @include for-size(mobile){
+                @include flex(column, center, center);
+            }
             .menu{
                 font-family: Work Sans;
                 font-size: 16px;
                 font-weight: normal;
                 letter-spacing: normal;
                 margin-right:60px;
+                @include for-size(mobile){
+                    margin-right:0;
+                }
                 a{
                     text-decoration: none;
                     color: #ffffff;
@@ -73,8 +150,14 @@ nav{
                 }
             }
             .social{
+                @include for-size(mobile){
+                    @include flex(row, center, center);
+                }
                 img{
                     margin: 10px;
+                    @include for-size(mobile){
+                        margin: 40px;
+                    }
                 }
             }
         }
@@ -89,9 +172,23 @@ header{
         background-size: cover;
         top:0;
         z-index:-1;
+        @include for-size(phone){
+            height:initial;
+        }
         .main-header{
             width: 80vw;
             margin-bottom:40px;
+            @include for-size(phone){
+                width:90%;
+            }
+            h4{
+                @include for-size(phone){
+                    margin:100px 0 20px 0;
+                }
+                @include for-size(tablet-portrait){
+                    margin:40px 0 20px 0;
+                }
+            }
             p{
                 @include text(Work Sans,500, 16px,#fff);
                 max-width:670px;
@@ -107,6 +204,10 @@ footer{
     @include flex( row, center, center);
     p{
         @include text (Work Sans, 100,16px, #fff);
+        @include for-size(phone){
+            width: 80vw;
+            text-align:center;
+        }
     }
 }
 //home//
@@ -114,17 +215,69 @@ footer{
     @include flex(row, center, center);
     background-color: #fff;
     height: 152px;
+    @include for-size(mobile){
+        height:initial;
+    }
+
     .container{
         @include flex(row, space-between, center);
         width: 80vw;
+        @include for-size(tablet-portrait){
+            @include flex(row, center , center);
+            flex-wrap: wrap;
+            width:90vw;
+            margin:30px 0 30px 0;
+        }
+        @include for-size(tablet-landscape){
+            @include flex(row, center , center);
+            flex-wrap: wrap;
+            width:90vw;
+            height: 152px;
+        }
+        @include for-size(phone){
+            @include flex(row, center, center);
+            flex-wrap: wrap;
+            width:100%;
+            margin: 20px 0 20px 0;
+        }
         .data{
             @include flex(row, center, center);
             height: 56px;
+
+            @include for-size(tablet-portrait){
+                @include flex(column, center, center);
+                text-align:center;
+                margin: 0 20px 0 20px ;
+                height: initial;
+            }
+            @include for-size(tablet-landscape){
+                @include flex(column, center, center);
+                text-align:center;
+                margin: 0 20px 0 20px ;
+            }
+            @include for-size(phone){
+                @include flex(column, center, center);
+                margin: 20px 25px 20px 25px;
+                text-align: center;
+                height: initial;
+            }
+
             .solid-txt{
-            font-family: Work Sans;
-            font-weight: bold;
-            font-size: 48px;
-            color: #1B75BC;
+                font-family: Work Sans;
+                font-weight: bold;
+                font-size: 48px;
+                color: #1B75BC;
+                @include for-size(tablet-landscape){
+                    margin-bottom:10px;
+                    margin-top:0px;
+                }
+                @include for-size(tablet-portrait){
+                    margin-bottom:10px;
+                    margin-top:0px;
+                }
+                @include for-size(phone){
+                    margin:0px;
+                }
             }
             p{
                 font-family: Work Sans;
@@ -132,6 +285,15 @@ footer{
                 font-size: 16px;
                 color: #373736;
                 margin-left: 10px;
+                @include for-size(tablet-landscape){
+                    margin-top:0px;
+                }
+                @include for-size(tablet-portrait){
+                    margin-top:10px;
+                }
+                @include for-size(mobile){
+                    margin-left:0;
+                }
             }
         }
     }
@@ -147,6 +309,11 @@ footer{
             border-radius: 8px;
             height:113px;
             box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+            padding-right:10px;
+            @include for-size(mobile){
+                width: 330px;
+                margin: 10px 20px 10px 20px ;
+            }
             .position-icon{
                 margin-left: 16px;
             }
@@ -175,12 +342,32 @@ footer{
     .title{
         margin-top: 60px;
         margin-bottom: 60px ;
+        @include for-size(phone){
+            margin-bottom:0px;
+        }
+        p{
+            @include for-size(phone){
+                margin-bottom:20px;
+            }  
+        }
     }
     .grid{
         .card-2{
             @include flex(column, center, center);
             text-align: center;
             margin-top:24px;
+            @include for-size(tablet-landscape){
+                width:40%;
+                margin:20px;
+            }
+            @include for-size(tablet-portrait){
+                width:40%;
+                margin:20px;
+            }
+            @include for-size(phone){
+                width:80%;
+                margin:20px;
+            }
         }
     }
     .awards{
@@ -188,83 +375,178 @@ footer{
         .cont-2{
             @include flex(row, space-between, center);
             width:70vw;
+            @include for-size(mobile){
+                flex-wrap:wrap;
+            }
+            img{
+                @include for-size(tablet-landscape){
+                    width:16%;
+                }
+                @include for-size(tablet-portrait){
+                    width:16%;
+                }
+                @include for-size(phone){
+                    width:30%;
+                    margin-top:20px;
+                    margin-right:20px;
+                }
+            }
         }
     }
     .locations{
         padding-bottom: 60px;
+        .grid{
+            .grid18{
+                @include for-size(mobile){
+                    margin-right: 50px;
+                }
+                @include for-size(phone){
+                    width:80vw;
+                    margin-right:initial;
+                }  
+                img{
+                    @include for-size(phone){
+                        width:80vw;
+                    }   
+                }
+            }
+            .grid813{
+                @include for-size(tablet-portrait){
+                    @include flex(row, space-around, center);
+                    width:80%;
+                    text-align: center;
+                    margin-top:20px;
+                }
+                div{
+                    @include for-size(phone){
+                        
+                    }
+                    .body2{
+                        @include for-size(tablet-portrait){
+                        margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 .form-container{
     background-color: #373736 ;
-    height: 334px;
-    .social{
-        max-width: 200px ;
-        @include flex(row, space-between, center)
+    height: 600px;
+    @include for-size(mobile){
+        height:initial;
     }
-    form{
-        .form{
-            @include flex(column, flex-start, flex-start);
-            flex-wrap: wrap;
-            height: 300px;
-            .input {
-                margin-top:24px;
-                min-width:150px;
+    .grid{
+        @include for-size(mobile){
+            @include flex(column, center, center);
+        }
+        .grid14{
+            @include for-size(mobile){
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .social{
+                max-width: 200px ;
+                @include flex(row, space-between, center);
+                @include for-size(mobile){
+                    max-width:initial;
+                }
+                @include for-size(phone){
+                    max-width:60vw;
+                    margin:0 auto;
+                }
+            }
+        }
+        form{
+            .form{
                 @include flex(column, flex-start, flex-start);
-                input{
-                    margin-top:5px;
-                    margin-right:15px;
-                    width:16vw;
+                flex-wrap: wrap;
+                height: 300px;
+                @include for-size(mobile){
+                    @include flex(column, center, center);
+                    width:80vw;
+                    height: initial;
+                }
+                .input {
+                    margin-top:24px;
                     min-width:150px;
-                    height: 40px;
-                    border-radius: 5px ;
-                    border-style: none;
-                    padding: 0px 1.4em 0px .8em;
-                }
-                p{
-                    margin-top:0;
-                    margin:0;
-                    font-size: 16px;
-                    font-weight: 100;
-                    color: #fff;
-                    
-                }
-                .inputfile {
-                    width: 0.1px;
-                    height: 0.1px;
-                    opacity: 0;
-                    overflow: hidden;
-                    position: absolute;
-                    z-index: -1;
-                }
-                .inputfile + label {
-                    margin-top: 10px;
-                    font-family: Work Sans;
-                    font-size: 14px;
-                    color: white;
-                    background-color: $blue-color;
-                    display: inline-block;
-                    padding: 10px 20px 10px 20px ;
-                    border-radius: 20px;
-                    cursor: pointer;
-                }
-                #message{
-                    height:130px;
-                    padding: .6em 1.4em .5em .8em;
-                }
-                #position{
-                    margin-top:5px;
-                    margin-right:15px;
-                    width:18vw;
-                    min-width:185px;
-                    height: 40px;
-                    border-radius: 5px ;
-                    border-style: none;
-                    @include text(Montserrat ,100, 16px , #616061 );
-                    padding: 0 0 0 .8em;
-                    -moz-appearance: none;
-                    -webkit-appearance: none;
-                    appearance: none;
-                    cursor: pointer;
+                    @include flex(column, flex-start, flex-start);
+                    @include for-size(mobile){
+                        width:90%;
+                    }
+                    input{
+                        margin-top:5px;
+                        margin-right:15px;
+                        width:16vw;
+                        min-width:150px;
+                        height: 40px;
+                        border-radius: 5px ;
+                        border-style: none;
+                        padding: 0px 1.4em 0px .8em;
+                        @include for-size(mobile){
+                            width:88%;
+                            margin-right:0px;
+                        }
+                    }
+                    p{
+                        margin-top:0;
+                        margin:0;
+                        font-size: 16px;
+                        font-weight: 100;
+                        color: #fff;
+                        
+                    }
+                    .inputfile {
+                        width: 0.1px;
+                        height: 0.1px;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        z-index: -1;
+                    }
+                    .inputfile + label {
+                        margin-top: 10px;
+                        font-family: Work Sans;
+                        font-size: 14px;
+                        color: white;
+                        background-color: $blue-color;
+                        display: inline-block;
+                        padding: 10px 20px 10px 20px ;
+                        border-radius: 20px;
+                        cursor: pointer;
+                    }
+                    #message{
+                        height:130px;
+                        padding: .6em 1.4em .5em .8em;
+                        @include for-size(mobile){
+                            width:90%;
+                        }
+                    }
+                    #position{
+                        margin-top:5px;
+                        margin-right:15px;
+                        width:18vw;
+                        min-width:185px;
+                        height: 40px;
+                        border-radius: 5px ;
+                        border-style: none;
+                        @include text(Montserrat ,100, 16px , #616061 );
+                        padding: 0 0 0 .8em;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                        @include for-size(mobile){
+                            width:100%;
+                        }
+                        @include for-size(tablet-portrait){
+                            width:68vw;
+                        }
+                        @include for-size(tablet-landscape){
+                            width:67vw;
+                        }
+                    }
                 }
             }
         }
@@ -442,6 +724,7 @@ footer{
                 border-style: none !important;
                 letter-spacing: 1.4px;
                 margin-bottom: 0px;
+                text-align: start;
                 .flex{
                     @include flex(row, flex-start, center);
                     padding: 0;
@@ -513,6 +796,8 @@ footer{
         }
     }
 }
+
+
 //Text styles//
 .title{
     @include title(#373736);
@@ -556,6 +841,46 @@ label{
 //grid//
 .grid{
     @extend %grid;
+    @include for-size(mobile){
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        max-width:90vw;
+    }
+}
+
+
+.grid15{
+    grid-column: 1/5;
+}
+.grid59{
+    grid-column: 5/9;
+}
+.grid913{
+    grid-column: 9/13;
+}
+
+
+.grid14{
+    grid-column: 1/4;
+}
+.grid47{
+    grid-column: 4/7;
+}
+.grid710{
+    grid-column: 7/10;
+}
+.grid1013{
+    grid-column: 10/13;
+}
+
+.grid18{
+    grid-column: 1/8;
+}
+.grid813{
+    grid-column: 8/13;
+}
+.grid413{
+    grid-column: 4/13;
 }
 //Buttons//
 .flex{
