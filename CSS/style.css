@@ -171,7 +171,6 @@ header {
 }
 header .main-header {
   width: 50vw;
-  margin-bottom: 40px;
   margin-left: 10%;
   display: flex;
   flex-direction: column;
@@ -186,24 +185,45 @@ header .main-header {
 }
 @media (min-width: 600px) and (max-width: 899px) {
   header .main-header {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 70vw;
+    margin-bottom: 3%;
   }
 }
 @media (min-width: 900px) and (max-width: 1199px) {
   header .main-header {
-    margin-top: 10%;
     width: 70vw;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  header .main-header .job-position {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  header .main-header .job-position {
+    margin-top: 40px;
   }
 }
 @media (max-width: 599px) {
+  header .main-header .job-position {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+}
+header .main-header h4 {
+  margin-bottom: 10px;
+}
+@media (max-width: 599px) {
   header .main-header h4 {
-    margin: 100px 0 20px 0;
+    margin: 100px 0 10px 0;
   }
 }
 @media (min-width: 600px) and (max-width: 899px) {
   header .main-header h4 {
-    margin: 40px 0 20px 0;
+    margin: 40px 0 10px 0;
   }
 }
 header .main-header p {
@@ -222,6 +242,11 @@ header .main-header .duck2 {
     width: 15%;
     min-width: 100px;
     display: initial;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
   }
 }
 @media (max-width: 599px) {
@@ -229,6 +254,11 @@ header .main-header .duck2 {
     width: 15%;
     min-width: 100px;
     display: initial;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
   }
 }
 header .main-header button {
@@ -242,18 +272,16 @@ header .main-header button {
 header .duck {
   width: 12%;
   margin-right: 10%;
-  margin-top: 10%;
+  margin-top: 160px;
 }
 @media (min-width: 600px) and (max-width: 899px) {
   header .duck {
-    width: 15%;
-    margin-top: 35%;
     display: none;
   }
 }
 @media (min-width: 900px) and (max-width: 1199px) {
   header .duck {
-    margin-top: 25%;
+    margin-top: 160px;
   }
 }
 @media (max-width: 599px) {
@@ -308,10 +336,11 @@ footer p {
   .data-container .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 60vw;
+    max-width: 508px;
     margin: 30px 0 30px 0;
   }
 }
@@ -319,10 +348,11 @@ footer p {
   .data-container .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 80vw;
+    min-width: 720px;
     height: 152px;
   }
 }
@@ -330,10 +360,10 @@ footer p {
   .data-container .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80vw;
     margin: 20px 0 20px 0;
   }
 }
@@ -342,7 +372,6 @@ footer p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 56px;
 }
 @media (min-width: 600px) and (max-width: 899px) {
   .data-container .container .data {
@@ -351,7 +380,7 @@ footer p {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0 20px 0 20px;
+    margin: 10px 20px 0 20px;
     height: initial;
   }
 }
@@ -590,7 +619,11 @@ footer p {
 
 .form-container {
   background-color: #373736;
-  height: 600px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 @media screen and (max-width: 1199px) {
   .form-container {
@@ -789,7 +822,35 @@ footer p {
   justify-content: flex-start;
   align-items: center;
 }
-.description .grid div .title {
+@media (min-width: 900px) and (max-width: 1199px) {
+  .description .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80vw;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .description .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80vw;
+  }
+}
+@media (max-width: 599px) {
+  .description .grid {
+    width: 90vw;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .description .grid .grid19 {
+    margin-left: 20px;
+  }
+}
+.description .grid .title {
   text-align: initial;
 }
 
@@ -817,6 +878,21 @@ footer p {
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .life-style .pictures {
+    width: 90vw;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .life-style .pictures {
+    width: 90vw;
+  }
+}
+@media (max-width: 599px) {
+  .life-style .pictures {
+    width: 90vw;
+  }
+}
 
 .job-form {
   display: flex;
@@ -825,19 +901,33 @@ footer p {
   align-items: flex-start;
   margin-bottom: 60px;
   margin-top: 60px;
+  min-width: 500px;
+}
+@media (max-width: 599px) {
+  .job-form {
+    min-width: 300px;
+  }
 }
 .job-form .submit {
   text-align: center;
   width: 32vw;
   min-width: 150px;
+  margin: 0 auto;
 }
 .job-form .input {
   margin-top: 24px;
+  width: 100%;
   min-width: 150px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+@media (max-width: 599px) {
+  .job-form .input {
+    max-width: 300px;
+  }
 }
 .job-form .input label {
   font-size: 16px;
@@ -846,13 +936,18 @@ footer p {
 }
 .job-form .input input {
   margin-top: 5px;
-  margin-right: 15px;
-  width: 30vw;
+  width: 100%;
   min-width: 150px;
+  max-width: 487px;
   height: 40px;
   border-radius: 5px;
   border-width: thin;
-  padding: 0px 1.4em 0px 0.8em;
+  padding: 0px 0px 0px 0.8em;
+}
+@media (max-width: 599px) {
+  .job-form .input input {
+    max-width: 287px;
+  }
 }
 .job-form .input p {
   margin-top: 0;
@@ -883,24 +978,39 @@ footer p {
 .job-form .input #message {
   height: 130px;
   padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  min-width: 150px;
+  max-width: 464px;
+}
+@media (max-width: 599px) {
+  .job-form .input #message {
+    max-width: 264px;
+  }
 }
 .job-form .input #position {
   margin-top: 5px;
   margin-right: 15px;
-  width: 32.5vw;
-  min-width: 185px;
+  width: 100%;
+  min-width: 150px;
+  max-width: 500px;
   height: 40px;
   border-radius: 5px;
+  border-width: thin;
+  padding: 0px 3em 0px 0.8em;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100;
   font-size: 16px;
   color: #616061;
-  padding: 0 0 0 0.8em;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
+}
+@media (max-width: 599px) {
+  .job-form .input #position {
+    max-width: 300px;
+  }
 }
 
 .acordion {
@@ -923,12 +1033,27 @@ footer p {
 .acordion .flex .title p {
   margin: 0;
 }
+@media (max-width: 599px) {
+  .acordion .flex .title-acord {
+    text-align: start;
+  }
+}
 .acordion .flex .body2 {
   text-align: initial;
   color: #000;
 }
 .acordion .acordion-body {
   width: 60vw;
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .acordion .acordion-body {
+    width: 80vw;
+  }
+}
+@media (max-width: 599px) {
+  .acordion .acordion-body {
+    width: 90vw;
+  }
 }
 .acordion .acordion-body .acordion-pt .line {
   width: 100%;
@@ -958,6 +1083,28 @@ footer p {
   margin-bottom: 0px;
   text-align: start;
 }
+@media (min-width: 600px) and (max-width: 899px) {
+  .acordion .acordion-body .acordion-pt .acordion-btn {
+    width: 80vw;
+    margin-right: 0;
+  }
+}
+@media (max-width: 599px) {
+  .acordion .acordion-body .acordion-pt .acordion-btn {
+    width: 90vw;
+    margin-right: 0;
+  }
+}
+@media (max-width: 599px) {
+  .acordion .acordion-body .acordion-pt .acordion-btn .txt {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #373736;
+    max-width: 280px;
+  }
+}
 .acordion .acordion-body .acordion-pt .acordion-btn .flex {
   display: flex;
   flex-direction: row;
@@ -978,6 +1125,16 @@ footer p {
 .acordion .acordion-body .acordion-pt .acordion-btn .flex .txt {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+@media (max-width: 599px) {
+  .acordion .acordion-body .acordion-pt .acordion-btn .flex .txt {
+    text-align: start;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #373736;
+  }
 }
 .acordion .acordion-body .acordion-pt .acordion-btn .chevron {
   background-image: url("../SVG/chevron-down.svg");
@@ -1020,6 +1177,7 @@ footer p {
   background-color: #d52789;
   width: 100%;
   height: 130px;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1032,6 +1190,7 @@ footer p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 .hier2 .flex {
   background-color: #373736;
@@ -1043,12 +1202,28 @@ footer p {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .hier2 .flex {
+    width: 90%;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .hier2 .flex {
+    width: 90%;
+  }
+}
+@media (max-width: 599px) {
+  .hier2 .flex {
+    width: 100%;
+    height: 120px;
+  }
+}
 .hier2 .flex h4 {
   margin: 0px;
 }
 
 .title {
-  font-family: Work Sans;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 34px;
@@ -1076,7 +1251,7 @@ h3 {
 }
 
 h4 {
-  font-family: Work Sans;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 34px;
@@ -1154,6 +1329,14 @@ label {
 
 .grid913 {
   grid-column: 9/13;
+}
+
+.grid113 {
+  grid-column: 1/13;
+}
+
+.grid19 {
+  grid-column: 1/9;
 }
 
 .grid14 {
@@ -1239,11 +1422,37 @@ button {
   height: 232px;
   background-color: #1b75bc;
 }
+@media (min-width: 600px) and (max-width: 899px) {
+  .pic1 {
+    width: 50%;
+  }
+}
+@media (max-width: 599px) {
+  .pic1 {
+    width: 100%;
+  }
+}
 
 .pic2 {
   width: 40%;
   height: 232px;
   background-color: #d52789;
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .pic2 {
+    width: 50%;
+  }
+}
+@media (max-width: 599px) {
+  .pic2 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .pic0 {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

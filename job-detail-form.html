@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
         <link rel="icon" type="image/png" sizes="32x32" href="">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@0,100,800&family=Work+Sans:ital,wght@0,300;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@0,100,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="CSS/style.css">
         
@@ -12,8 +13,10 @@
     </head>
     <body>
         <!-- Navigation -->
-        <nav>
+        <div class="mov-menu" onclick="displayMenu()"><img class="logo" src="svg/logo-i-texico.svg" alt=""> <img src="svg/menu.svg" alt=""></div>
+        <nav id="nav">
             <div class="navigation">
+                <div class="close" onclick="displayMenu()"><img src="/SVG/close.svg" alt=""></div>
                 <div>
                     <img src="svg/logo-i-texico.svg" alt="iTexico logo">
                 </div>
@@ -49,13 +52,15 @@
                     </div>
                 </div>
                 <p>At iTexico we are constantly looking for team players that want to make a great leap in their careers. We are a company for professionals that are up to big and fun projects that will develop your career and human growth.</p>
-                 <button>Join out team</button>
+                <img class="duck2" src="jpg/itexico-duck.png" alt=""> 
+                <button>Join out team</button>
             </div>
+            <img class="duck" src="jpg/itexico-duck.png" alt="">
         </header>
         <!--Job description-->
         <section class="description">
             <div class="grid">
-                <div style="grid-column: 1/13;">
+                <div class="grid113">
                     <div class="title">
                         <p>Responsabilities</p>
                     </div>
@@ -63,7 +68,7 @@
 
                         Fruitcake tiramisu pastry. Gingerbread soufflé toffee lollipop cookie. Cake sesame snaps cake marshmallow jujubes topping pudding sweet roll. Caramels cupcake brownie sweet roll marzipan bear claw.</p>
                 </div>
-                <div style="grid-column: 1/9;">
+                <div class="grid19">
                     <div class="title">
                         <p>You will</p>
                     </div>
@@ -75,7 +80,7 @@
                         <li class="body2">Proin fringilla dui eget massa hendrerit lobortis.</li>
                     </ul>
                 </div>
-                <div style="grid-column: 1/9;">
+                <div class="grid19">
                     <div class="title">
                         <p>Experience</p>
                     </div>
@@ -103,7 +108,7 @@
                             </div>
                             <div class="input">
                                 <label for="position">I´m applying for...</label>
-                                <select name="position" id="position">
+                               <select name="position" id="position">
                                     <option value="none">-Please Select-</option>
                                     <option value="design">Design</option>
                                     <option value="java">Java</option>
@@ -111,7 +116,7 @@
                                     <option value="net">.NET</option>
                                     <option value="devops">Devops</option>
                                      <option value="ai">AI</option>
-                                    </select>
+                                     </select>
                             </div>
                             <div class="input">
                                 <label for="office">Wich office would you prefer?</label>
@@ -133,12 +138,12 @@
         </section>
 
         <!--How we hier-->
-        <section class="hier2">
+        <a class="hier2" href="">
             <div class="flex">
-                <h4>How we hire Disigners</h4>
+                <h4>How we hire Designers</h4>
                 <img src="SVG/chevron-right.svg" alt="">
             </div>
-        </section>
+        </a>
         <!--Life style-->
         <section class="life-style">
             <div class="title">
@@ -151,11 +156,12 @@
                 <div class="pic1"></div>
                 <div class="pic2"></div>
                 <div class="pic1"></div>
-                <div class="pic2"></div>
+                <div class="pic2 pic0"></div>
             </div>
         </section>
         <footer>
             <p>© 2020 iTexico LLC. All Rights Reserved. Privacy and Legal</p>
         </footer>
+        <script src="javascript.js" ></script>
     </body>
 </html>
