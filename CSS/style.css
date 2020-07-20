@@ -1220,6 +1220,58 @@ footer p {
   margin: 0px;
 }
 
+.openings {
+  background-color: #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 200px;
+}
+.openings .flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+}
+.openings .flex .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  height: 58px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  padding-right: 16px;
+  width: 100%;
+  margin-bottom: 2px;
+}
+@media screen and (max-width: 1199px) {
+  .openings .flex .card {
+    width: 330px;
+    margin: 10px 20px 10px 20px;
+  }
+}
+.openings .flex .card .icon .position-icon {
+  height: 40px;
+  margin-left: 2em;
+}
+.openings .flex .card .icon h6 {
+  margin: 0 0 0 9px;
+}
+.openings .flex div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.openings .flex div .body1 {
+  margin-right: 24px;
+}
+
 .title {
   font-family: "Work Sans", sans-serif;
   font-style: normal;
